@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  browsepvc:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2025-07-21T22:46:26.118387936Z"
+    description: Easy browsing of kubernetes PVCs
+    digest: 7392027ad649601d1c4d1e382f0ee2245547c80fac2cc3f4dbbec9250ff3341c
+    name: browsepvc
+    type: application
+    urls:
+    - https://github.com/RobertoMachorro/charts/releases/download/browsepvc-0.1.0/browsepvc-0.1.0.tgz
+    version: 0.1.0
   mychart:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -11,4 +22,4 @@ entries:
     urls:
     - https://github.com/RobertoMachorro/charts/releases/download/mychart-0.1.0/mychart-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-22T02:45:35.856629014Z"
+generated: "2025-07-21T22:46:26.118397765Z"
