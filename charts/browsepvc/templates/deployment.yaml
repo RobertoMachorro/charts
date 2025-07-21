@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      workloadselector: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        workloadselector: {{ .Release.Name }}
+    spec:
+      volumes:
+        - name: pvc-volume
+          persistentVolumeClaim:
+            claimName: {{ .Values.pvcName }}
+      containers:
+        - name: {{ .Release.Name }}
+          image: {{ .Values.image.repository }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+          - containerPort: {{ .Values.image.containerPort }}
+          volumeMounts:
+            - name: pvc-volume
+              mountPath: {{ .Values.webserver.documentRoot }}
+              readOnly: true
+      restartPolicy: Always
+  replicas: 1
