@@ -6,3 +6,6 @@ To learn more about the release, try:
 
   $ helm status {{ .Release.Name }}
   $ helm get all {{ .Release.Name }}
+
+NOTE: This chart only works if the pod runs in the same node as other pod if sharing the PVC.
+
